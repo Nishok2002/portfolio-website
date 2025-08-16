@@ -29,19 +29,15 @@ const About = () => {
             />
           </div>
         <div>
-          {/* A concise summary focusing on experience and domains */}
-          <p className="mb-4 text-gray-700">
-            With over three years of experience in data analytics and machine
-            learning, I’ve helped organisations across insurance, research,
-            education and retail unlock insights from their data. I build
-            dashboards, automate pipelines and develop predictive models using
-            tools such as Python, SQL, Snowflake and Power BI.
-          </p>
-          <p className="text-gray-700">
-            I’m passionate about turning complex datasets into clear stories that
-            drive better decisions and enjoy collaborating with diverse teams to
-            solve challenging problems.
-          </p>
+          {/* A concise summary focusing on experience and domains
+             presented as bullet points for easier reading. */}
+          <ul className="list-disc space-y-2 pl-5 text-gray-700">
+            <li>Over three years of experience in data analytics and machine learning</li>
+            <li>Worked across insurance, research, education and retail domains</li>
+            <li>Build dashboards, automate pipelines and develop predictive models</li>
+            <li>Proficient in Python, SQL, Snowflake and Power&nbsp;BI</li>
+            <li>Passionate about turning complex datasets into clear stories and collaborating with teams</li>
+          </ul>
         </div>
         </div>
       </div>
