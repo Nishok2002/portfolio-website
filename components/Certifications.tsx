@@ -1,3 +1,6 @@
+// This component uses client-only libraries, so mark it as a client component
+'use client';
+
 import { certifications } from '../data/certifications';
 import { motion } from 'framer-motion';
 

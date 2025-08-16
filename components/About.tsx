@@ -1,3 +1,6 @@
+'use client';
+
+// Mark this as a client component since it uses client-only libraries
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
