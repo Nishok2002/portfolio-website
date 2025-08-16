@@ -30,6 +30,15 @@ export default function RootLayout({
       <head>
         {/* Favicon for the site – this will appear as the tab icon in the browser */}
         <link rel="icon" href="/favicon.png" type="image/png" />
+
+        {/*
+          To support Progressive Web App (PWA) behaviour on iOS devices,
+          specify the title to display when the web app is saved to the
+          home screen. Without this meta tag the default title will be
+          used, which can be less descriptive.  See the provided
+          documentation for details.
+        */}
+        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
       </head>
       {/*
         Remove the explicit white background on the body so our global
