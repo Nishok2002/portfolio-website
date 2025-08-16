@@ -1,3 +1,6 @@
+// This component uses client-side state (e.g. useState), so it must be a client component.
+'use client';
+
 import Link from 'next/link';
 import { useState } from 'react';
 
