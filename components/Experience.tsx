@@ -3,6 +3,7 @@
 
 import { experiences } from '../data/experience';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const Experience = () => {
   return (
@@ -21,11 +22,24 @@ const Experience = () => {
         <div className="space-y-8">
           {experiences.map((exp, idx) => (
             <div key={idx} className="flex flex-col md:flex-row">
-              <div className="md:w-1/4">
-                <h3 className="font-semibold text-gray-900">{exp.role}</h3>
-                <p className="text-sm text-gray-600">{exp.company}</p>
-                <p className="text-sm text-gray-500">{exp.period}</p>
+              {/* Company info with optional logo */}
+              <div className="md:w-1/4 flex items-start space-x-3">
+                {exp.logo ? (
+                  <Image
+                    src={exp.logo}
+                    alt={`${exp.company} logo`}
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 object-contain"
+                  />
+                ) : null}
+                <div>
+                  <h3 className="font-semibold text-gray-900">{exp.role}</h3>
+                  <p className="text-sm text-gray-600">{exp.company}</p>
+                  <p className="text-sm text-gray-500">{exp.period}</p>
+                </div>
               </div>
+              {/* Role details */}
               <div className="mt-2 border-l-4 border-accent pl-6 md:mt-0 md:w-3/4">
                 <ul className="list-disc space-y-2 text-gray-700">
                   {exp.details.map((detail, i) => (
