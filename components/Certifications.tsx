@@ -9,7 +9,7 @@ const Certifications = () => {
   return (
     <motion.section
       id="certifications"
-      className="bg-gray-50 px-4 py-16"
+      className="px-4 py-16"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -19,32 +19,34 @@ const Certifications = () => {
         <h2 className="mb-8 text-3xl font-bold text-gray-900 md:text-4xl">
           Certifications &amp; Education
         </h2>
-        <ul className="space-y-6">
+        <ul className="space-y-5">
           {certifications.map((cert, idx) => (
-            <li
+            <motion.li
               key={idx}
-              className="flex items-center space-x-4 rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+              className="flex items-center space-x-4 rounded-lg border border-purple-200 bg-white/70 p-4 shadow-sm backdrop-blur-sm"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              viewport={{ once: true }}
             >
               {cert.logo ? (
-                // Render credential or degree logo.  Use a rectangular size with
-                // rounded corners and object-contain so the full image is visible.
                 <Image
                   src={cert.logo}
                   alt={`${cert.issuer} logo`}
-                  width={64}
-                  height={40}
-                  className="h-10 w-16 rounded-md object-contain"
+                  width={80}
+                  height={48}
+                  className="h-12 w-20 rounded-md object-contain"
                 />
               ) : null}
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900">
+              <div className="flex-1">
+                <h3 className="text-base font-semibold text-gray-900">
                   {cert.title}
                 </h3>
                 <p className="text-sm text-gray-600">
                   {cert.issuer} &middot; {cert.issued}
                 </p>
               </div>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>

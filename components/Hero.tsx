@@ -1,19 +1,60 @@
 'use client';
 
 // NOTE: This component uses client-side libraries, so mark it as a client component
+'use client';
+
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
+/**
+ * The hero section introduces the site with a welcoming gradient and
+ * dynamic typewriter effect cycling through Nishok's core roles. A subtle
+ * background image adds texture while the overlay ensures the text
+ * remains legible. The call‑to‑action button stands out with a white
+ * background and purple text, inviting visitors to scroll down.
+ */
+const titles = ['Data Analyst', 'Data Engineer', 'Machine Learning Engineer'];
+
 const Hero = () => {
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState('');
+  const [deleting, setDeleting] = useState(false);
+
+  // Typewriter effect: cycles through titles, typing and deleting one character at a time
+  useEffect(() => {
+    const currentTitle = titles[currentTitleIndex];
+    let timer: NodeJS.Timeout;
+
+    if (!deleting && displayText === currentTitle) {
+      // Pause briefly when the full word is typed
+      timer = setTimeout(() => setDeleting(true), 1400);
+    } else if (deleting && displayText === '') {
+      // Move to the next title once deletion is complete
+      setDeleting(false);
+      setCurrentTitleIndex((currentTitleIndex + 1) % titles.length);
+    } else {
+      timer = setTimeout(() => {
+        setDisplayText((prev) =>
+          deleting
+            ? currentTitle.substring(0, prev.length - 1)
+            : currentTitle.substring(0, prev.length + 1)
+        );
+      }, deleting ? 50 : 120);
+    }
+
+    return () => clearTimeout(timer);
+  }, [displayText, deleting, currentTitleIndex]);
+
   return (
     <motion.section
       id="home"
-      className="relative flex h-screen flex-col items-center justify-center text-center overflow-hidden"
+      className="relative flex h-screen flex-col items-center justify-center overflow-hidden text-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      {/* Background image */}
+      {/* Background illustration */}
       <div className="absolute inset-0 -z-10">
         <Image
           src="/hero.jpg"
@@ -22,18 +63,28 @@ const Hero = () => {
           style={{ objectFit: 'cover' }}
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/50 to-white/80" />
+        {/* Soft overlay to ensure readability over the image */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/80" />
       </div>
-      <h1 className="mb-4 text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl">
-        Turning Data into Insights
+      <h1 className="mb-2 text-4xl font-semibold text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl">
+        Nishok Ilangovan
       </h1>
-      <p className="mb-8 max-w-xl text-lg text-gray-700 sm:text-xl">
-        I am a data analyst and machine learning enthusiast passionate about
-        uncovering patterns and delivering actionable insights.
+      {/* Animated title that cycles through roles */}
+      <h2 className="mb-4 text-2xl font-medium text-purple-700 sm:text-3xl md:text-4xl">
+        {displayText}
+        <span className="inline-block w-1 animate-pulse bg-purple-500 ml-1 h-6 align-middle" />
+      </h2>
+      {/* Short tagline / skills summary */}
+      <p className="mb-1 max-w-2xl text-base text-gray-700 sm:text-lg">
+        Passionate about uncovering patterns and delivering actionable insights.
+      </p>
+      {/* Primary technical skills */}
+      <p className="mb-8 text-sm font-medium uppercase tracking-wider text-purple-600 sm:text-base">
+        Python&nbsp;•&nbsp;SQL&nbsp;•&nbsp;Snowflake&nbsp;•&nbsp;Power&nbsp;BI&nbsp;•&nbsp;Neo4j
       </p>
       <a
         href="#about"
-        className="rounded-md bg-accent px-8 py-3 text-white shadow-md transition-colors hover:bg-blue-600"
+        className="rounded-md bg-white/90 px-8 py-3 font-medium text-purple-700 shadow transition-colors hover:bg-white"
       >
         Learn More
       </a>

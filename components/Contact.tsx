@@ -25,7 +25,7 @@ const Contact = () => {
         <div className="flex justify-center space-x-6">
           <a
             href="mailto:nishokilangovan2002@gmail.com"
-            className="rounded-md bg-accent px-6 py-3 font-medium text-white shadow-md transition-colors hover:bg-blue-600"
+            className="rounded-md bg-white/90 px-6 py-3 font-medium text-purple-700 shadow transition-colors hover:bg-white"
           >
             Send Email
           </a>
@@ -33,7 +33,7 @@ const Contact = () => {
             href="https://www.linkedin.com/in/nishok-ilangovan/"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-md bg-gray-900 px-6 py-3 font-medium text-white shadow-md transition-colors hover:bg-gray-700"
+            className="rounded-md bg-white/90 px-6 py-3 font-medium text-purple-700 shadow transition-colors hover:bg-white"
           >
             LinkedIn
           </a>

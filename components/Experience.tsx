@@ -9,7 +9,7 @@ const Experience = () => {
   return (
     <motion.section
       id="experience"
-      className="bg-gray-50 px-4 py-16"
+      className="px-4 py-16"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -19,22 +19,25 @@ const Experience = () => {
         <h2 className="mb-8 text-3xl font-bold text-gray-900 md:text-4xl">
           Experience
         </h2>
-        <div className="space-y-8">
+        <div className="space-y-10">
           {experiences.map((exp, idx) => (
-            <div key={idx} className="flex flex-col md:flex-row">
+            <motion.div
+              key={idx}
+              className="flex flex-col items-start gap-4 rounded-lg bg-white/70 p-6 shadow-sm backdrop-blur-sm md:flex-row"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              viewport={{ once: true }}
+            >
               {/* Company info with optional logo */}
-              <div className="md:w-1/4 flex items-start space-x-3">
+              <div className="flex items-start space-x-4 md:w-1/4">
                 {exp.logo ? (
-                  // Render the company logo.  We use a larger size and make
-                  // the image fully round for a polished look.  Using
-                  // object-cover ensures the aspect ratio is preserved while
-                  // filling the circular frame.
                   <Image
                     src={exp.logo}
                     alt={`${exp.company} logo`}
-                    width={56}
-                    height={56}
-                    className="h-14 w-14 rounded-full object-cover"
+                    width={64}
+                    height={64}
+                    className="h-16 w-16 rounded-full object-cover shadow"
                   />
                 ) : null}
                 <div>
@@ -44,14 +47,14 @@ const Experience = () => {
                 </div>
               </div>
               {/* Role details */}
-              <div className="mt-2 border-l-4 border-accent pl-6 md:mt-0 md:w-3/4">
-                <ul className="list-disc space-y-2 text-gray-700">
+              <div className="md:w-3/4">
+                <ul className="list-disc space-y-2 border-l-4 border-purple-300 pl-6 text-gray-700">
                   {exp.details.map((detail, i) => (
                     <li key={i}>{detail}</li>
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
