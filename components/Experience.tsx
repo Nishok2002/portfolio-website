@@ -15,7 +15,10 @@ const Experience = () => {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <div className="mx-auto max-w-5xl">
+      {/* Increase max-width to allow the experience cards to stretch further
+       * horizontally.  This helps align the period/dates across entries by
+       * giving each card more room. */}
+      <div className="mx-auto max-w-6xl">
         <h2 className="mb-8 text-3xl font-bold text-gray-900 md:text-4xl">
           Experience
         </h2>
@@ -29,15 +32,17 @@ const Experience = () => {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
             >
-              {/* Company info with optional logo */}
-              <div className="flex items-start space-x-4 md:w-1/4">
+              {/* Company info with optional logo.  Increase the logo size and
+               * allocate a bit more space for the employer/date column to
+               * align dates properly. */}
+              <div className="flex items-start space-x-4 md:w-1/3">
                 {exp.logo ? (
                   <Image
                     src={exp.logo}
                     alt={`${exp.company} logo`}
-                    width={112}
-                    height={64}
-                    className="h-16 w-28 rounded-md object-contain shadow"
+                    width={128}
+                    height={72}
+                    className="h-18 w-32 rounded-md object-contain shadow"
                   />
                 ) : null}
                 <div>
@@ -47,7 +52,7 @@ const Experience = () => {
                 </div>
               </div>
               {/* Role details */}
-              <div className="md:w-3/4">
+              <div className="md:w-2/3">
                 <ul className="list-disc space-y-2 border-l-4 border-indigo-200 pl-6 text-gray-700">
                   {exp.details.map((detail, i) => (
                     <li key={i}>{detail}</li>
