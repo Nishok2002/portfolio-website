@@ -40,9 +40,9 @@ const Experience = () => {
                   <Image
                     src={exp.logo}
                     alt={`${exp.company} logo`}
-                    width={128}
-                    height={72}
-                    className="h-18 w-32 rounded-md object-contain shadow"
+                    width={160}
+                    height={80}
+                    className="h-20 w-40 rounded-md object-contain shadow"
                   />
                 ) : null}
                 <div>
