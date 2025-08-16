@@ -15,7 +15,7 @@ const About = () => {
       viewport={{ once: true }}
     >
       <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">About Me</h2>
-      <div className="rounded-xl bg-white/80 p-8 shadow-md backdrop-blur-md">
+      <div className="rounded-xl bg-white/80 p-8 shadow-md backdrop-blur-md md:max-w-5xl md:mx-auto">
         <div className="flex flex-col items-center gap-8 md:flex-row">
           {/* Profile picture */}
           <div className="flex-shrink-0">

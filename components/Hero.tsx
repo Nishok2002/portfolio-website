@@ -63,21 +63,22 @@ const Hero = () => {
         Nishok Ilangovan
       </h1>
       {/* Animated title that cycles through roles */}
-      <h2 className="mb-4 text-2xl font-medium text-blue-600 sm:text-3xl md:text-4xl">
+      <h2 className="mb-4 text-2xl font-medium text-indigo-600 sm:text-3xl md:text-4xl">
         {displayText}
-        <span className="ml-1 inline-block h-6 w-1 animate-pulse bg-blue-500 align-middle" />
+        {/* Animated caret that pulses alongside the typewriter text */}
+        <span className="ml-1 inline-block h-6 w-1 animate-pulse bg-indigo-500 align-middle" />
       </h2>
       {/* Short tagline / skills summary */}
       <p className="mb-1 max-w-2xl text-base text-gray-700 sm:text-lg">
         Passionate about uncovering patterns and delivering actionable insights.
       </p>
       {/* Primary technical skills */}
-      <p className="mb-8 text-sm font-medium uppercase tracking-wider text-blue-600 sm:text-base">
+      <p className="mb-8 text-sm font-medium uppercase tracking-wider text-indigo-600 sm:text-base">
         Python&nbsp;•&nbsp;SQL&nbsp;•&nbsp;Snowflake&nbsp;•&nbsp;Power&nbsp;BI&nbsp;•&nbsp;Neo4j
       </p>
       <a
         href="#about"
-        className="rounded-md bg-white/90 px-8 py-3 font-medium text-blue-700 shadow transition-colors hover:bg-white"
+        className="rounded-md bg-white/90 px-8 py-3 font-medium text-indigo-700 shadow transition-colors hover:bg-white"
       >
         Learn More
       </a>

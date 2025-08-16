@@ -30,9 +30,9 @@ const Projects = () => {
                 className={`relative overflow-hidden rounded-xl p-8 shadow-lg transition-transform hover:scale-[1.02] ${colour}`}
               >
                 {/* Pin */}
-                <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-purple-300 shadow h-3 w-3" />
+                <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 transform h-3 w-3 rounded-full bg-indigo-300 shadow" />
                 {/* Folded corner */}
-                <div className="absolute right-0 top-0 h-0 w-0 border-l-[20px] border-t-[20px] border-l-transparent border-t-purple-200" />
+                <div className="absolute right-0 top-0 h-0 w-0 border-l-[20px] border-t-[20px] border-l-transparent border-t-indigo-200" />
                 <h3 className="mb-1 text-lg font-semibold text-gray-900">
                   {project.title}
                 </h3>
