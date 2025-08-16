@@ -1,8 +1,18 @@
 export interface ExperienceItem {
   role: string;
+  /** Company name */
   company: string;
+  /** Time period of employment */
   period: string;
+  /** Bullet points describing what you did */
   details: string[];
+  /**
+   * Path to a company logo image located in the public folder. If provided,
+   * the logo will be displayed alongside the role and company name in the
+   * experience section. Paths should start with a forward slash (e.g.
+   * `/interviewdesk.png`).
+   */
+  logo?: string;
 }
 
 export const experiences: ExperienceItem[] = [
@@ -16,6 +26,7 @@ export const experiences: ExperienceItem[] = [
       'Developed SQL and Python scripts to automate data collection and reporting processes.',
       'Collaborated with product and marketing teams to deliver data‑driven insights for decision making.',
     ],
+    logo: '/stablecoupons.png',
   },
   {
     role: 'Data Analyst',
@@ -26,6 +37,7 @@ export const experiences: ExperienceItem[] = [
       'Performed model selection and hyper‑parameter tuning to improve predictive accuracy.',
       'Communicated analytical findings to stakeholders via dashboards and presentations.',
     ],
+    logo: '/jaassure.png',
   },
   {
     role: 'Business Analyst Intern',
@@ -36,6 +48,7 @@ export const experiences: ExperienceItem[] = [
       'Created system requirements and technical specifications for new initiatives.',
       'Worked closely with faculty and administrators to streamline workflows and improve efficiency.',
     ],
+    logo: '/umaryland.png',
   },
   {
     role: 'Data Analyst',
@@ -46,6 +59,7 @@ export const experiences: ExperienceItem[] = [
       'Created dashboards and reports to track recruitment metrics and candidate engagement.',
       'Applied machine learning techniques to enhance candidate matching algorithms.',
     ],
+    logo: '/interviewdesk.png',
   },
   {
     role: 'Business Data Analyst',
@@ -56,6 +70,7 @@ export const experiences: ExperienceItem[] = [
       'Developed ETL processes and interactive dashboards to support decision making.',
       'Presented data‑driven recommendations to senior leadership.',
     ],
+    logo: '/wns.png',
   },
   {
     role: 'Data Analyst Intern',
@@ -66,5 +81,6 @@ export const experiences: ExperienceItem[] = [
       'Prepared and labeled datasets for model training and evaluation.',
       'Developed image classification models using Python and OpenCV.',
     ],
+    logo: '/genik.png',
   },
 ];
