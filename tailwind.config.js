@@ -7,9 +7,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#0f172a',
-        secondary: '#1e293b',
-        accent: '#2563eb',
+      primary: '#34AADC', // Apple Blue
+      secondary: '#5AC8FA', // Apple Light Blue
+      accent: '#FF9500', // Apple Orange
+      warning: '#FFCC00', // Apple Yellow
+      success: '#4CD964', // Apple Green
+      danger: '#FF2D55', // Apple Pink
       },
     },
   },
