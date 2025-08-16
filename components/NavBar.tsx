@@ -12,8 +12,8 @@ const NavBar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur shadow-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link href="#" className="text-lg font-semibold">
-          {/* Replace with your name or logo */}
-          Data\u00a0Analyst Portfolio
+          {/* Site name updated to reflect your portfolio */}
+          Nishok&nbsp;Ilangovan
         </Link>
         <div className="hidden space-x-6 md:flex">
           {navItems.map((item) => (

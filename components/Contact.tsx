@@ -1,6 +1,15 @@
+import { motion } from 'framer-motion';
+
 const Contact = () => {
   return (
-    <section id="contact" className="px-4 py-16">
+    <motion.section
+      id="contact"
+      className="px-4 py-16"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
           Get in Touch
@@ -12,13 +21,13 @@ const Contact = () => {
         </p>
         <div className="flex justify-center space-x-6">
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:nishokilangovan2002@gmail.com"
             className="rounded-md bg-accent px-6 py-3 font-medium text-white shadow-md transition-colors hover:bg-blue-600"
           >
             Send Email
           </a>
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/nishok-ilangovan/"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-md bg-gray-900 px-6 py-3 font-medium text-white shadow-md transition-colors hover:bg-gray-700"
@@ -27,7 +36,7 @@ const Contact = () => {
           </a>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

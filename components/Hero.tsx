@@ -1,10 +1,14 @@
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <section
+    <motion.section
       id="home"
       className="relative flex h-screen flex-col items-center justify-center text-center overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
     >
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
@@ -30,7 +34,7 @@ const Hero = () => {
       >
         Learn More
       </a>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,8 +1,16 @@
 import { projects } from '../data/projects';
+import { motion } from 'framer-motion';
 
 const Projects = () => {
   return (
-    <section id="projects" className="px-4 py-16">
+    <motion.section
+      id="projects"
+      className="px-4 py-16"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <div className="mx-auto max-w-6xl">
         <h2 className="mb-8 text-3xl font-bold text-gray-900 md:text-4xl">
           Projects
@@ -36,7 +44,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

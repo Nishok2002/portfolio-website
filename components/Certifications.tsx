@@ -1,8 +1,16 @@
 import { certifications } from '../data/certifications';
+import { motion } from 'framer-motion';
 
 const Certifications = () => {
   return (
-    <section id="certifications" className="bg-gray-50 px-4 py-16">
+    <motion.section
+      id="certifications"
+      className="bg-gray-50 px-4 py-16"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <div className="mx-auto max-w-5xl">
         <h2 className="mb-8 text-3xl font-bold text-gray-900 md:text-4xl">
           Certifications &amp; Education
@@ -23,7 +31,7 @@ const Certifications = () => {
           ))}
         </ul>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
