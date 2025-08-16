@@ -3,13 +3,14 @@ import { ReactNode } from 'react';
 // Import a clean, modern font from Google. Poppins is a friendly sans‑serif
 // that pairs well with the light colour palette. Using next/font allows
 // automatic font optimisation without manual stylesheet management.
-import { Poppins } from 'next/font/google';
+import { Nunito } from 'next/font/google';
 
-// Initialise the Poppins font with a range of weights. The subsets option
-// ensures only the Latin subset is loaded, reducing overall font size.  
-const poppins = Poppins({
+// Initialise the Nunito font with a range of weights.  Nunito is a rounded
+// sans‑serif typeface that brings a friendly, approachable feel to the page.
+// Loading only the Latin subset keeps the bundle small.
+const nunito = Nunito({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '600', '700'],
 });
 
 export const metadata = {
@@ -35,7 +36,7 @@ export default function RootLayout({
         gradient takes effect. The text colour is still set here to
         ensure readability across the site.
       */}
-      <body className={`${poppins.className} text-gray-800`}>
+      <body className={`${nunito.className} text-gray-800`}>
         {children}
       </body>
     </html>
