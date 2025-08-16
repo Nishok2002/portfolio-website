@@ -35,14 +35,16 @@ const NavBar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur shadow-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 md:py-6">
-        {/* Replace portfolio name with the GitHub ID and link to profile */}
+        {/* Replace the brand text with a generic GitHub label.  We still link to
+         * the user's GitHub profile, but the visible label now reads
+         * "Github" and is colored orange to stand out. */}
         <Link
           href="https://github.com/Nishok2002"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-2xl font-semibold text-indigo-600 hover:text-indigo-800"
+          className="text-2xl font-semibold text-orange-500 hover:text-orange-600"
         >
-          Nishok2002
+          Github
         </Link>
         {/* Desktop navigation */}
         <div className="hidden space-x-8 md:flex">
@@ -88,9 +90,11 @@ const NavBar = () => {
           </svg>
         </button>
       </div>
-      {/* Mobile sidebar */}
+      {/* Mobile sidebar.  On small screens the menu slides in from the left and
+       * uses a solid white background to contrast with the page.  It
+       * anchors to the left edge on mobile only. */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 transform bg-white/95 p-6 shadow-lg transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 left-0 h-full w-64 transform bg-white p-6 shadow-lg transition-transform duration-300 ease-in-out md:hidden ${
           menuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
