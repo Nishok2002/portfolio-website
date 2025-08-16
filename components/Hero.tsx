@@ -14,7 +14,14 @@ import { motion } from 'framer-motion';
  * remains legible. The call‑to‑action button stands out with a white
  * background and purple text, inviting visitors to scroll down.
  */
-const titles = ['Data Analyst', 'Data Engineer', 'Machine Learning Engineer'];
+// Titles to cycle through in the typewriter effect. Each title includes
+// an appropriate emoji at the end to hint at the nature of the role. We use
+// standard Unicode emojis that should render in iOS style on supported devices.
+const titles = [
+  'Data Analyst \uD83D\uDCCA', // bar chart for analytics
+  'Data Engineer \u2699\uFE0F', // gear symbol for engineering
+  'Machine Learning Engineer \uD83E\uDDE0' // brain for machine learning
+];
 
 const Hero = () => {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
