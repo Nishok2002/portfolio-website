@@ -20,6 +20,30 @@ const NavBar = () => {
   /**
    * Smoothly scrolls to the given section and closes the sidebar on mobile.
    */
+  /**
+   * Scroll smoothly to the specified vertical position over a given duration.
+   * We implement a custom tween instead of relying on the browser’s built-in
+   * smooth scrolling so we can control the animation speed.  This yields a
+   * slower, more relaxed scroll that feels like someone else is guiding you
+   * down the page.
+   */
+  const smoothScrollTo = (targetY: number, duration = 1500) => {
+    const startY = window.scrollY;
+    const deltaY = targetY - startY;
+    const startTime = performance.now();
+
+    const step = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      window.scrollTo(0, startY + deltaY * progress);
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
   const handleScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
@@ -27,7 +51,10 @@ const NavBar = () => {
     e.preventDefault();
     const target = document.querySelector(href);
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+      // Calculate the absolute Y offset for the target section and scroll to it
+      const targetY =
+        (target as HTMLElement).getBoundingClientRect().top + window.scrollY;
+      smoothScrollTo(targetY, 1500);
     }
     setMenuOpen(false);
   };
