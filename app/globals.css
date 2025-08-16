@@ -11,11 +11,23 @@
  * legible on the darker background.
  */
 body {
-  /* Remove the default white background and apply a gradient.
-     The semi‑transparent colours allow underlying elements and
-     shadows to blend for a glass‑like effect. */
-  background: linear-gradient(135deg, rgba(104, 81, 165, 0.6), rgba(163, 124, 208, 0.6));
-  backdrop-filter: blur(15px);
+  /*
+   * Apply a soft gradient with white at the centre fading to light purples
+   * towards the edges. This gives the page a peaceful, airy feel while
+   * hinting at the primary colour palette. A gentle backdrop blur creates
+   * depth and a glossy finish similar to frosted glass. Use a neutral
+   * sans‑serif stack for a clean, modern aesthetic.  
+   */
+  background: linear-gradient(
+    to bottom,
+    #f7f5fc 0%, /* very light lavender */
+    #f7f5fc 15%,
+    #ffffff 40%, /* white centre */
+    #f7f5fc 60%,
+    #ece3f7 85%, /* subtle light purple */
+    #e2d7f2 100%
+  );
+  backdrop-filter: blur(12px);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   @apply antialiased;

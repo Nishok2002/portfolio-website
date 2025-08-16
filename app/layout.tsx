@@ -1,5 +1,16 @@
 import '../app/globals.css';
 import { ReactNode } from 'react';
+// Import a clean, modern font from Google. Poppins is a friendly sans‑serif
+// that pairs well with the light colour palette. Using next/font allows
+// automatic font optimisation without manual stylesheet management.
+import { Poppins } from 'next/font/google';
+
+// Initialise the Poppins font with a range of weights. The subsets option
+// ensures only the Latin subset is loaded, reducing overall font size.  
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});
 
 export const metadata = {
   // Updated title to reflect the owner’s name and role.
@@ -24,7 +35,7 @@ export default function RootLayout({
         gradient takes effect. The text colour is still set here to
         ensure readability across the site.
       */}
-      <body className="text-gray-900">
+      <body className={`${poppins.className} text-gray-800`}>
         {children}
       </body>
     </html>
