@@ -3,10 +3,22 @@
 @tailwind utilities;
 
 /* Custom global styles */
+/*
+ * Apply a soft, peaceful purple backdrop across the entire site.
+ * The translucent gradient and subtle blur give the page a glossy,
+ * modern aesthetic while still allowing coloured cards and sections
+ * to stand out. Text colour is defined in the layout so it remains
+ * legible on the darker background.
+ */
 body {
-  @apply bg-white text-gray-900 antialiased;
+  /* Remove the default white background and apply a gradient.
+     The semi‑transparent colours allow underlying elements and
+     shadows to blend for a glass‑like effect. */
+  background: linear-gradient(135deg, rgba(104, 81, 165, 0.6), rgba(163, 124, 208, 0.6));
+  backdrop-filter: blur(15px);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  @apply antialiased;
 }
 
 a {
