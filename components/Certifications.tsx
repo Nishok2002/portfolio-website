@@ -23,7 +23,7 @@ const Certifications = () => {
           {certifications.map((cert, idx) => (
             <motion.li
               key={idx}
-              className="flex items-center space-x-4 rounded-lg border border-purple-200 bg-white/70 p-4 shadow-sm backdrop-blur-sm"
+              className="flex items-center space-x-4 rounded-xl bg-white/80 p-6 shadow-md backdrop-blur-md"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
@@ -33,9 +33,9 @@ const Certifications = () => {
                 <Image
                   src={cert.logo}
                   alt={`${cert.issuer} logo`}
-                  width={80}
-                  height={48}
-                  className="h-12 w-20 rounded-md object-contain"
+                  width={96}
+                  height={56}
+                  className="h-14 w-24 rounded-md object-contain"
                 />
               ) : null}
               <div className="flex-1">

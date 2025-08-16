@@ -27,7 +27,7 @@ const Projects = () => {
             return (
               <div
                 key={idx}
-                className={`relative overflow-hidden rounded-lg p-6 shadow-md transition-transform hover:scale-[1.02] ${colour}`}
+                className={`relative overflow-hidden rounded-xl p-8 shadow-lg transition-transform hover:scale-[1.02] ${colour}`}
               >
                 {/* Pin */}
                 <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-purple-300 shadow h-3 w-3" />

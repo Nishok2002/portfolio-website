@@ -23,7 +23,7 @@ const Experience = () => {
           {experiences.map((exp, idx) => (
             <motion.div
               key={idx}
-              className="flex flex-col items-start gap-4 rounded-lg bg-white/70 p-6 shadow-sm backdrop-blur-sm md:flex-row"
+              className="flex flex-col items-start gap-4 rounded-xl bg-white/70 p-8 shadow-md backdrop-blur-md md:flex-row"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
@@ -48,7 +48,7 @@ const Experience = () => {
               </div>
               {/* Role details */}
               <div className="md:w-3/4">
-                <ul className="list-disc space-y-2 border-l-4 border-purple-300 pl-6 text-gray-700">
+                <ul className="list-disc space-y-2 border-l-4 border-blue-300 pl-6 text-gray-700">
                   {exp.details.map((detail, i) => (
                     <li key={i}>{detail}</li>
                   ))}

@@ -49,42 +49,35 @@ const Hero = () => {
   return (
     <motion.section
       id="home"
-      className="relative flex h-screen flex-col items-center justify-center overflow-hidden text-center"
+      className="relative flex h-screen flex-col items-center justify-center text-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      {/* Background illustration */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/hero.jpg"
-          alt="Abstract technology background"
-          fill
-          style={{ objectFit: 'cover' }}
-          priority
-        />
-        {/* Soft overlay to ensure readability over the image */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/80" />
-      </div>
+      {/**
+       * Removed the background image here so the gradient defined in
+       * globals.css can shine through. This gives the hero section a
+       * cleaner, more cohesive look that matches the rest of the site.
+       */}
       <h1 className="mb-2 text-4xl font-semibold text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl">
         Nishok Ilangovan
       </h1>
       {/* Animated title that cycles through roles */}
-      <h2 className="mb-4 text-2xl font-medium text-purple-700 sm:text-3xl md:text-4xl">
+      <h2 className="mb-4 text-2xl font-medium text-blue-600 sm:text-3xl md:text-4xl">
         {displayText}
-        <span className="inline-block w-1 animate-pulse bg-purple-500 ml-1 h-6 align-middle" />
+        <span className="ml-1 inline-block h-6 w-1 animate-pulse bg-blue-500 align-middle" />
       </h2>
       {/* Short tagline / skills summary */}
       <p className="mb-1 max-w-2xl text-base text-gray-700 sm:text-lg">
         Passionate about uncovering patterns and delivering actionable insights.
       </p>
       {/* Primary technical skills */}
-      <p className="mb-8 text-sm font-medium uppercase tracking-wider text-purple-600 sm:text-base">
+      <p className="mb-8 text-sm font-medium uppercase tracking-wider text-blue-600 sm:text-base">
         Python&nbsp;•&nbsp;SQL&nbsp;•&nbsp;Snowflake&nbsp;•&nbsp;Power&nbsp;BI&nbsp;•&nbsp;Neo4j
       </p>
       <a
         href="#about"
-        className="rounded-md bg-white/90 px-8 py-3 font-medium text-purple-700 shadow transition-colors hover:bg-white"
+        className="rounded-md bg-white/90 px-8 py-3 font-medium text-blue-700 shadow transition-colors hover:bg-white"
       >
         Learn More
       </a>
