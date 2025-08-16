@@ -3,6 +3,7 @@
 
 import { certifications } from '../data/certifications';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const Certifications = () => {
   return (
@@ -22,14 +23,27 @@ const Certifications = () => {
           {certifications.map((cert, idx) => (
             <li
               key={idx}
-              className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+              className="flex items-center space-x-4 rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
             >
-              <h3 className="text-lg font-semibold text-gray-900">
-                {cert.title}
-              </h3>
-              <p className="text-sm text-gray-600">
-                {cert.issuer} &middot; {cert.issued}
-              </p>
+              {cert.logo ? (
+                // Render credential or degree logo.  Use a rectangular size with
+                // rounded corners and object-contain so the full image is visible.
+                <Image
+                  src={cert.logo}
+                  alt={`${cert.issuer} logo`}
+                  width={64}
+                  height={40}
+                  className="h-10 w-16 rounded-md object-contain"
+                />
+              ) : null}
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {cert.title}
+                </h3>
+                <p className="text-sm text-gray-600">
+                  {cert.issuer} &middot; {cert.issued}
+                </p>
+              </div>
             </li>
           ))}
         </ul>
