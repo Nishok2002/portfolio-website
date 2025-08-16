@@ -40,7 +40,7 @@ const Certifications = () => {
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-32 items-center space-x-4 rounded-xl bg-white p-6 shadow-md transition-transform transition-colors hover:bg-pink-100 hover:scale-105"
+                  className="flex h-32 items-center space-x-4 rounded-xl bg-white p-6 shadow-md transition-transform hover:scale-105"
                   onClick={(e) => {
                     // If a clipboard code is present, copy it before navigating.
                     if (cert.clipboard) {
@@ -60,9 +60,9 @@ const Certifications = () => {
                     <Image
                       src={cert.logo}
                       alt={`${cert.issuer} logo`}
-                      width={128}
-                      height={64}
-                      className="h-16 w-32 rounded-md object-contain"
+                      width={160}
+                      height={80}
+                      className="h-20 w-40 rounded-md object-contain"
                     />
                   ) : null}
                   <div className="flex-1">
@@ -75,14 +75,14 @@ const Certifications = () => {
                   </div>
                 </a>
               ) : (
-                <div className="flex h-32 items-center space-x-4 rounded-xl bg-white p-6 shadow-md transition-transform transition-colors hover:bg-pink-100 hover:scale-105">
+                <div className="flex h-32 items-center space-x-4 rounded-xl bg-white p-6 shadow-md transition-transform hover:scale-105">
                   {cert.logo ? (
                     <Image
                       src={cert.logo}
                       alt={`${cert.issuer} logo`}
-                      width={128}
-                      height={64}
-                      className="h-16 w-32 rounded-md object-contain"
+                      width={160}
+                      height={80}
+                      className="h-20 w-40 rounded-md object-contain"
                     />
                   ) : null}
                   <div className="flex-1">
