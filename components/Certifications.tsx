@@ -19,7 +19,7 @@ const Certifications = () => {
         <h2 className="mb-8 text-3xl font-bold text-gray-900 md:text-4xl">
           Certifications &amp; Education
         </h2>
-        <ul className="space-y-5">
+        <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {certifications.map((cert, idx) => (
             <motion.li
               key={idx}
@@ -40,7 +40,7 @@ const Certifications = () => {
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-4 rounded-xl bg-white/80 p-6 shadow-md backdrop-blur-md transition-transform hover:shadow-lg"
+                  className="flex items-center space-x-4 rounded-xl bg-white p-6 shadow-md transition-colors hover:bg-pink-100"
                   onClick={(e) => {
                     // If a clipboard code is present, copy it before navigating.
                     if (cert.clipboard) {
@@ -48,7 +48,7 @@ const Certifications = () => {
                       navigator.clipboard
                         .writeText(cert.clipboard)
                         .catch(() => {
-                          /* noop: clipboard may not be available in some browsers */
+                          /* clipboard may not be available */
                         })
                         .finally(() => {
                           window.open(cert.link, '_blank');
@@ -60,9 +60,9 @@ const Certifications = () => {
                     <Image
                       src={cert.logo}
                       alt={`${cert.issuer} logo`}
-                      width={96}
-                      height={56}
-                      className="h-14 w-24 rounded-md object-contain"
+                      width={112}
+                      height={64}
+                      className="h-16 w-28 rounded-md object-contain"
                     />
                   ) : null}
                   <div className="flex-1">
@@ -75,14 +75,14 @@ const Certifications = () => {
                   </div>
                 </a>
               ) : (
-                <div className="flex items-center space-x-4 rounded-xl bg-white/80 p-6 shadow-md backdrop-blur-md">
+                <div className="flex items-center space-x-4 rounded-xl bg-white p-6 shadow-md transition-colors hover:bg-pink-100">
                   {cert.logo ? (
                     <Image
                       src={cert.logo}
                       alt={`${cert.issuer} logo`}
-                      width={96}
-                      height={56}
-                      className="h-14 w-24 rounded-md object-contain"
+                      width={112}
+                      height={64}
+                      className="h-16 w-28 rounded-md object-contain"
                     />
                   ) : null}
                   <div className="flex-1">

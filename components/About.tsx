@@ -28,24 +28,21 @@ const About = () => {
               priority
             />
           </div>
-          <div>
-            <p className="mb-4 text-gray-700">
-              I’m a data analyst and machine learning practitioner with a passion
-              for transforming raw information into clear, concise and actionable
-              insights. With experience across multiple industries, I have helped
-              organizations make better decisions by building dashboards,
-              automating pipelines and developing predictive models.
-            </p>
-            <p className="mb-4 text-gray-700">
-              My toolkit includes Python, SQL, R, Neo4j, Snowflake, Tableau and
-              Power BI, along with a strong foundation in statistics and
-              machine learning. I thrive when collaborating with cross‑functional
-              teams and enjoy communicating complex ideas through intuitive
-              visualizations. Whether it’s cleaning messy datasets, modeling
-              relationships or designing a new analytics solution, I’m always eager
-              to learn and solve problems.
-            </p>
-          </div>
+        <div>
+          {/* A concise summary focusing on experience and domains */}
+          <p className="mb-4 text-gray-700">
+            With over three years of experience in data analytics and machine
+            learning, I’ve helped organisations across insurance, research,
+            education and retail unlock insights from their data. I build
+            dashboards, automate pipelines and develop predictive models using
+            tools such as Python, SQL, Snowflake and Power BI.
+          </p>
+          <p className="text-gray-700">
+            I’m passionate about turning complex datasets into clear stories that
+            drive better decisions and enjoy collaborating with diverse teams to
+            solve challenging problems.
+          </p>
+        </div>
         </div>
       </div>
     </motion.section>
