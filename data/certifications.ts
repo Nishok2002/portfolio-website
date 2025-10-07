@@ -38,6 +38,12 @@ export const certifications: CertificationItem[] = [
     logo: '/neo4j.png',
     link: 'https://graphacademy.neo4j.com/c/45e5a677-728d-414e-84ec-ad93d928949b/',
   },
+    {
+    title: 'Apache Airflow 3 Fundamentals',
+    issuer: 'Astronomer',
+    issued: 'Oct 2025',
+    logo: '/astronomer-certification-for-apache-airflow-3-funda.png',
+  },
   {
     title: 'Master of Science in Information Systems',
     issuer: 'University of Maryland',
@@ -56,10 +62,5 @@ export const certifications: CertificationItem[] = [
     link:
       'https://www.coursera.org/account/accomplishments/verify/ZD6QF9S77VFS?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course',
   },
-  {
-    title: 'Apache Airflow 3 Fundamentals',
-    issuer: 'Astronomer',
-    issued: 'Oct 2025',
-    logo: '/astronomer-certification-for-apache-airflow-3-funda.png',
-  },
+
 ];
