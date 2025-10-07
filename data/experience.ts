@@ -17,41 +17,40 @@ export interface ExperienceItem {
 
 export const experiences: ExperienceItem[] = [
   {
-    role: 'Data Analyst',
+    role: 'Data Engineer',
     company: 'StableCoupons Inc.',
     period: 'Jan 2025 – Present',
     details: [
-      'Built interactive dashboards using Tableau and Power BI to monitor marketing campaign performance.',
-      'Designed and maintained Snowflake data warehouses to support enterprise analytics.',
-      'Developed SQL and Python scripts to automate data collection and reporting processes.',
-      'Collaborated with product and marketing teams to deliver data‑driven insights for decision making.',
+      'Built an end-to-end AWS data pipeline with S3, Lambda, and PySpark to process 2 years of financial data under a Medallion Architecture.',
+      'Automated incremental ingestion, validation, and backfill workflows with centralized logging and schema tracking',
+      'Developed predictive analytics dashboards in Tableau to visualize stock trends and forecasting insights.',
     ],
     logo: '/stablecoupons.png',
   },
   {
-    role: 'Data Analyst',
+    role: 'Data Engineer',
     company: 'JA ASSURE',
     period: 'Jun 2024 – Dec 2024',
     details: [
-      'Built machine learning models for risk assessment and claims analysis.',
-      'Performed model selection and hyper‑parameter tuning to improve predictive accuracy.',
-      'Communicated analytical findings to stakeholders via dashboards and presentations.',
+      'Built a RAG-based FAQ chatbot with Whisper AI, automating responses and reducing analyst workload.',
+      'Engineered PDF-to-dataset extraction pipelines, improving model training efficiency by 50%',
+      'Developed premium prediction models with XGBoost to optimize underwriting decisions',
     ],
     logo: '/jaassure.png',
   },
   {
-    role: 'Business Analyst Intern',
+    role: 'Business Intelligence Engineer',
     company: 'University of Maryland',
     period: 'Jan 2024 – Dec 2024',
     details: [
-      'Analyzed business processes and identified areas for improvement within academic departments.',
-      'Created system requirements and technical specifications for new initiatives.',
-      'Worked closely with faculty and administrators to streamline workflows and improve efficiency.',
+      'Led the migration of approval workflows from Qualtrics to Salesforce, saving 150+ staff hours per semester',
+      'Designed ERDs, DFDs, and system specifications to enhance data accuracy and ERP integration',
+      'Delivered process automation and documentation that reduced manual errors by over 30%',
     ],
     logo: '/umaryland.png',
   },
   {
-    role: 'Data Analyst',
+    role: 'Data Engineer',
     company: 'InterviewDesk',
     period: 'Jan 2024 – Jul 2024',
     details: [
@@ -62,7 +61,7 @@ export const experiences: ExperienceItem[] = [
     logo: '/interviewdesk.png',
   },
   {
-    role: 'Business Data Analyst',
+    role: 'Business Intelligence Developer',
     company: 'WNS Global Services',
     period: 'Oct 2021 – May 2023',
     details: [
@@ -73,12 +72,12 @@ export const experiences: ExperienceItem[] = [
     logo: '/wns.png',
   },
   {
-    role: 'Data Analyst Intern',
+    role: 'Machine Learning Intern',
     company: 'Genik Technologies',
     period: 'Aug 2021 – Oct 2021',
     details: [
-      'Worked on deep learning and computer vision projects using convolutional neural networks.',
-      'Prepared and labeled datasets for model training and evaluation.',
+      'Developed CNN and YOLOv4 models for soil classification using ImageNet datasets',
+      'Applied transfer learning with ResNet to enhance accuracy and optimize irrigation schedules',
       'Developed image classification models using Python and OpenCV.',
     ],
     logo: '/genik.png',
