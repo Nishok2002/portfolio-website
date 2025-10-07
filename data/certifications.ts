@@ -57,9 +57,9 @@ export const certifications: CertificationItem[] = [
       'https://www.coursera.org/account/accomplishments/verify/ZD6QF9S77VFS?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course',
   },
   {
-    title: 'Bachelor of Technology in Computer Science',
-    issuer: 'SRM Institute of Science & Technology',
-    issued: 'May 2023',
-    logo: '/srm.png',
+    title: 'Apache Airflow 3 Fundamentals',
+    issuer: 'Astronomer',
+    issued: 'Oct 2025',
+    logo: '/astronomer-certification-for-apache-airflow-3-funda.png',
   },
 ];
